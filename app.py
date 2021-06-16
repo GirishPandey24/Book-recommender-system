@@ -7,7 +7,7 @@ app=Flask(__name__)
 df=pd.read_json('result.json')
 @app.route('/')
 def home():
-    N=6
+    N=9
     random6=df.sample(6)
     random6=[dict(random6.iloc[i]) for i in range(6)]
     return render_template('index.html',books=random6)#books=random6 bcoz we want to display random 6 book on "home page"
